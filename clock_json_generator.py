@@ -14,7 +14,6 @@ be 0 for an index of 0, less than 1 for the largest index, and that the time is
 proportional to the index.
 
 Todo:
-    * Implement JSON file attributes
     * Save files to output folder
 
 """
