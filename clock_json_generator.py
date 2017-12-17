@@ -16,8 +16,22 @@ Todo:
 """
 
 # Imports
+
 import json
 
 # Functions
 
 # Script
+
+# initialize core dictionary
+
+# populate list of overrides
+
+# add override list to core dictionary
+
+# save core dictionary to JSON
+
+# generate and save model dictionaries
+    # initialize dictionary
+    
+    # save dictionary to JSON
