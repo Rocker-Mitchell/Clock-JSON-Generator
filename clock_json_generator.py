@@ -26,18 +26,54 @@ import json
 from usercode import frameList, index2Time
 
 # Functions
+def makeOverride(time: float, model: str):
+    """Generate override dictionary.
+    
+    Args:
+        time: The time value.
+        model: The model file name.
+    
+    Returns:
+        An override dictionary.
+    
+    """
+    return {
+        "predicate" : {
+            "time" : time
+            },
+        "model" : "item/" + model
+        }
 
 # Script
 
 # initialize core dictionary
+core = {
+    "parent" : "item/generated",
+    "textures" : {
+        "layer0" : "items/" + frameList[0]
+        }
+    }
 
 # populate list of overrides
+overrides = []
+# first override takes the core file's name
+overrides.append(makeOverride(index2Time(0), "clock"))
+for index in range(1, len(frameList)):
+    overrides.append(makeOverride(index2Time(index), frameList[index]))
 
 # add override list to core dictionary
+core["overrides"] = overrides
 
 # save core dictionary to JSON
 
 # generate and save model dictionaries
+for texture in frameList[1:]
     # initialize dictionary
+    model = {
+        "parent" : "item/generated",
+        "textures" : {
+            "layer0" : "items/" + texture
+            }
+        }
     
     # save dictionary to JSON
