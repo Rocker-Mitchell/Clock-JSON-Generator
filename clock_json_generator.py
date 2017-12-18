@@ -58,15 +58,22 @@ overrides = []
 # first override takes the core file's name
 overrides.append(makeOverride(index2Time(0), "clock"))
 for index in range(1, len(frameList)):
-    overrides.append(makeOverride(index2Time(index), frameList[index]))
+    frame = frameList[index]
+    # if first frame occurs again, modify frame name
+    if frame is frameList[0]:
+        frame = "clock"
+    overrides.append(makeOverride(index2Time(index), frame))
 
 # add override list to core dictionary
 core["overrides"] = overrides
 
 # save core dictionary to JSON
 
+# format frameList to a set, removing first frame
+frameSet = set(frameList) - set(frameList[0:1])
+
 # generate and save model dictionaries
-for texture in frameList[1:]:
+for texture in frameSet:
     # initialize dictionary
     model = {
         "parent" : "item/generated",
