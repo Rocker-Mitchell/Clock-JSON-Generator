@@ -61,7 +61,7 @@ overrides.append(makeOverride(index2Time(0), "clock"))
 for index in range(1, len(frameList)):
     frame = frameList[index]
     # if first frame occurs again, modify frame name
-    if frame is frameList[0]:
+    if frame == frameList[0]:
         frame = "clock"
     overrides.append(makeOverride(index2Time(index), frame))
 
