@@ -16,6 +16,8 @@ first frame.
 
 """
 
+# Member Variables
+
 frameList = [] # a later function and script initializes frameList
 """list(str): list of clock frame file names (no extention).
 """
