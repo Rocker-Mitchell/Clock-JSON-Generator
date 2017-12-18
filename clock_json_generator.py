@@ -66,7 +66,7 @@ core["overrides"] = overrides
 # save core dictionary to JSON
 
 # generate and save model dictionaries
-for texture in frameList[1:]
+for texture in frameList[1:]:
     # initialize dictionary
     model = {
         "parent" : "item/generated",
