@@ -2,7 +2,7 @@
 
 This module contains a script that will generate JSON files. The files are
 intendend to be used as resource model data for the clock in Minecraft. The
-files will be added to an 'output' folder added in the same directory as this
+files will be saved to an 'output' folder added in the same directory as this
 module.
 
 For modularity, this module imports from a user made module (usercode) to define
