@@ -47,7 +47,7 @@ def makeOverride(time: float, model: str):
 # Script
 
 # initialize core dictionary
-core = {
+coreDict = {
     "parent" : "item/generated",
     "textures" : {
         "layer0" : "items/" + frameList[0]
@@ -55,18 +55,18 @@ core = {
     }
 
 # populate list of overrides
-overrides = []
+overridesList = []
 # first override takes the core file's name
-overrides.append(makeOverride(index2Time(0), "clock"))
+overridesList.append(makeOverride(index2Time(0), "clock"))
 for index in range(1, len(frameList)):
     frame = frameList[index]
     # if first frame occurs again, modify frame name
     if frame == frameList[0]:
         frame = "clock"
-    overrides.append(makeOverride(index2Time(index), frame))
+    overridesList.append(makeOverride(index2Time(index), frame))
 
 # add override list to core dictionary
-core["overrides"] = overrides
+coreDict["overrides"] = overridesList
 
 # save core dictionary to JSON
 
@@ -76,7 +76,7 @@ frameSet = set(frameList) - set(frameList[0:1])
 # generate and save model dictionaries
 for texture in frameSet:
     # initialize dictionary
-    model = {
+    modelDict = {
         "parent" : "item/generated",
         "textures" : {
             "layer0" : "items/" + texture
