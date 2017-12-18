@@ -53,6 +53,9 @@ def populateFrameList():
     '63' then follow with '00' again.
     
     """
+    # ensure list is cleared before population
+    frameList[:] = []
+    
     # first digit for loop
     for x in range(0,7):
         # second digit for loop
