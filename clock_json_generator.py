@@ -59,11 +59,11 @@ overridesList = []
 # first override takes the core file's name
 overridesList.append(makeOverride(index2Time(0), "clock"))
 for index in range(1, len(frameList)):
-    frame = frameList[index]
+    model = frameList[index]
     # if first frame occurs again, modify frame name
-    if frame == frameList[0]:
-        frame = "clock"
-    overridesList.append(makeOverride(index2Time(index), frame))
+    if model == frameList[0]:
+        model = "clock"
+    overridesList.append(makeOverride(index2Time(index), model))
 
 # add override list to core dictionary
 coreDict["overrides"] = overridesList
