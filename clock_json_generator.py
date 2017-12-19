@@ -32,7 +32,7 @@ def makeOverride(time: float, model: str):
     
     Args:
         time: The time value.
-        model: The model file name.
+        model: The model file name (no extention).
     
     Returns:
         An override dictionary.
