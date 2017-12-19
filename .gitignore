@@ -102,3 +102,4 @@ ENV/
 
 # user made files
 usercode.py
+output/
