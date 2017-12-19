@@ -14,13 +14,13 @@ be 0 for an index of 0, less than 1 for the largest index, and that the time is
 proportional to the index.
 
 Todo:
-    * Save files to output folder
     * Exception checking
 
 """
 
 # Imports
 
+import os
 import json
 # user made module
 from usercode import frameList, index2Time
@@ -47,6 +47,11 @@ def makeOverride(time: float, model: str):
 
 # Script
 
+# setup output directory
+outputDirectory = "./output/"
+if not os.path.exists(outputDirectory):
+    os.makedirs(outputDirectory)
+
 # initialize core dictionary
 coreDict = {
     "parent" : "item/generated",
@@ -70,6 +75,8 @@ for index in range(1, len(frameList)):
 coreDict["overrides"] = overridesList
 
 # save core dictionary to JSON
+with open(outputDirectory + "clock.json", "w") as outFile:
+    json.dump(coreDict, outFile, indent=4)
 
 # format frameList to a set, removing first frame
 frameSet = set(frameList) - set(frameList[0:1])
@@ -85,3 +92,5 @@ for texture in frameSet:
         }
     
     # save dictionary to JSON
+    with open(outputDirectory + texture + ".json", "w") as outFile:
+        json.dump(modelDict, outFile, indent=4)
