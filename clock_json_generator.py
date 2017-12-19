@@ -15,6 +15,7 @@ proportional to the index.
 
 Todo:
     * Save files to output folder
+    * Exception checking
 
 """
 
